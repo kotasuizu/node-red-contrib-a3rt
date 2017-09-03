@@ -1,0 +1,28 @@
+{
+  "name": "node-red-contrib-a3rt",
+  "version": "0.0.1",
+  "description": "A Node-RED node to call RECRUIT TECHNOLOGIES A3RT APIs.",
+  "dependencies": {
+    "request": ">=2.40.0"
+  },
+  "keywords": [
+    "node-red",
+    "chitchat",
+    "dialogue",
+    "dialog",
+    "a3rt",
+    "Talk",
+    "bluemix"
+  ],
+  "node-red": {
+    "nodes": {
+      "a3rt": "a3rt.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kotasuizu/node-red-contrib-a3rt"
+  },
+  "author": "Kota Suizu",
+  "license": "MIT"
+}

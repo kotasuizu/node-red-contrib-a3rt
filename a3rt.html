@@ -1,0 +1,82 @@
+<!--
+  Copyright (c) 2017 Kota Suizu
+  Released under the MIT license
+  http://opensource.org/licenses/mit-license.php
+-->
+
+<script type="text/x-red" data-template-name="a3rt-config">
+    <div class="form-row">
+        <label for="node-config-input-key"><i class="fa fa-lock"></i> API Key</label>
+        <input type="password" id="node-config-input-key">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('a3rt-config', {
+        category: "config",
+        color: "rgb(114, 199, 231)",
+        defaults: {
+            name: {
+                value: ""
+            }
+        },
+        credentials: {
+            key: {
+                type: "password",
+                required: true
+            }
+        },
+        label: function() {
+            return this.name;
+        }
+    });
+</script>
+
+
+
+<script type="text/x-red" data-template-name="A3RT-Talk">
+    <div class="form-row">
+        <label for="node-input-a3rtconfig"><i class="fa fa-globe"></i> API Key</label>
+        <input type="text" id="node-input-a3rtconfig">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="A3RT-Talk">
+    <p>This node provides chitchat using the RECRUIT TECHNOLOGIES A3RT service.</p>
+    <p>
+        For A3RT (TalkAPI) details, please see the following URL. <a href="https://a3rt.recruit-tech.co.jp/product/talkAPI/" target="_blank">A3RT (TalkAPI)</a>
+    </p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('A3RT-Talk', {
+        category: 'function',
+        defaults: {
+            name: {
+                value: ""
+            },
+            a3rtconfig: {
+                type: "a3rt-config",
+                required: true
+            }
+        },
+        color: "#00A0E2",
+        inputs: 1,
+        outputs: 1,
+        icon: "chatbot-message.png",
+        label: function() {
+            return this.name || "A3RT-Talk";
+        },
+        labelStyle: function() {
+            return this.name ? "node_label_italic" : "";
+        }
+    });
+</script>

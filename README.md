@@ -1,4 +1,4 @@
-# node-red-contrib-docomoapi
+# node-red-contrib-a3rt
 
 A Node-RED node to call RECRUIT TECHNOLOGIES A3RT APIs.
 * [A3RT](https://a3rt.recruit-tech.co.jp)
